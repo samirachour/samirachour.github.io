@@ -4,7 +4,7 @@ document.ontouchmove = function(event){
 
 function setup() {
   createCanvas(windowWidth,windowHeight);
-  rect(CENTER);
+  rectMode(CENTER);
   stroke(0);
   noFill();
   strokeWeight(5);
@@ -17,7 +17,7 @@ function draw() {
     if((i+1)<touches.length){
     line(touches[i].x,touches[i].y,touches[i+1].x,touches[i+1].y);
     }
-  else{ i+1<touches.length;
+  else{ 
     line(touches[i].x,touches[i].y,touches[0].x,touches[0].y);
   }
     rect(touches[i].x,touches[i].y,150,150);
