@@ -1,5 +1,8 @@
 function setup() {
   createCanvas(windowWidth,windowHeight);
+  rect(CENTER);
+  fill(random(0,255),random(0,255),random(0,255));
+  
 }
 
 function draw() {
