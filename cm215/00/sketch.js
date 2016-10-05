@@ -15,7 +15,7 @@ function draw() {
   
   for(var i=0;i<touches.length;i++){
     rect(touches[i].x,touches[i].y,150,150);
-    
+    line(25,25,75,75);
   }
 }
 
