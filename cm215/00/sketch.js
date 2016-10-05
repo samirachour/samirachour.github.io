@@ -20,6 +20,6 @@ function draw() {
 }
 
 function touchStarted() {
-  line(25,25,75,75);
+  //line(25,25,75,75);
   
 }
