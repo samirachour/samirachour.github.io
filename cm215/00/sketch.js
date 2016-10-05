@@ -8,6 +8,7 @@ function setup() {
   stroke(0);
   noFill();
   strokeWeight(5);
+  line(CENTER);
 }
 
 function draw() {
