@@ -8,7 +8,6 @@ function setup() {
   stroke(0);
   noFill();
   strokeWeight(5);
-  line(CENTER);
 }
 
 function draw() {
@@ -16,7 +15,7 @@ function draw() {
   
   for(var i=0;i<touches.length;i++){
     rect(touches[i].x,touches[i].y,150,150);
-    line(25,25,75,75);
+    line(50,50,100,100);
   }
 }
 
