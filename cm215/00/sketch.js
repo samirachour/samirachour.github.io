@@ -12,7 +12,7 @@ function setup() {
 
 function draw() {
   //background(255);
-   fill(random(0,255),random(0,255),random(0,255)); 
+   background(random(0,255),random(0,255),random(0,255)); 
   
   for(var i=0;i<touches.length;i++){
     if((i+1)<touches.length){
