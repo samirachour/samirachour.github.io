@@ -1,7 +1,11 @@
+document.ontouchmove = function(event){
+  event.preventDefault();
+}
 function setup() {
   createCanvas(windowWidth,windowHeight);
   rect(CENTER);
   stroke(0);
+  noFill();
   strokeWeight(5);
 }
 
