@@ -23,15 +23,10 @@ vertex(30, 75);
 endShape();
     //line(touches[i].x,touches[i].y,touches[i+1].x,touches[i+1].y);
     }
- else{
-beginShape(LINES);
-vertex(30, 20);
-vertex(85, 20);
-vertex(85, 75);
-vertex(30, 75);
-endShape();
+ //else{
+
    // line(touches[i].x,touches[i].y,touches[0].x,touches[0].y);
-}
+//}
                                    
     ellipse(touches[i].x,touches[i].y,150,150);
    
