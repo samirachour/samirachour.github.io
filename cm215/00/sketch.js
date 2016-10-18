@@ -16,9 +16,9 @@ function draw() {
   for(var i=0;i<touches.length;i++){
     if((i+1)<touches.length){
       beginShape(TRIANGLES);
-vertex(touches[i].x,touches[i].y,touches[i+1].x,touches[i+1].y);
-vertex(touches[i].x,touches[i].y,touches[i+1].x,touches[i+1].y);
-vertex(touches[i].x,touches[i].y,touches[i+1].x,touches[i+1].y);
+vertex(touches[i+1].x,touches[i+1].y);
+vertex(touches[i+1].x,touches[i+1].y);
+vertex(touches[i+1].x,touches[i+1].y);
 //vertex(60, 20);
 //vertex(70, 75);
 //vertex(80, 20);
@@ -27,12 +27,12 @@ endShape();
     }
  else{
  beginShape(TRIANGLES);
-vertex(touches[i].x,touches[i].y,touches[0].x,touches[0].y);
-vertex(touches[i].x,touches[i].y,touches[0].x,touches[0].y);
-vertex(touches[i].x,touches[i].y,touches[0].x,touches[0].y);
+vertex(touches[0].x,touches[0].y);
+vertex(touches[0].x,touches[0].y);
+vertex(touches[0].x,touches[0].y);
 endShape();
    // line(touches[i].x,touches[i].y,touches[0].x,touches[0].y);
-  }
+}
                                    
     ellipse(touches[i].x,touches[i].y,150,150);
    
