@@ -17,20 +17,20 @@ function draw() {
     if((i+1)<touches.length){
       beginShape(TRIANGLES);
 vertex(touches[i+1].x,touches[i+1].y);
-vertex(touches[i+1].x,touches[i+1].y);
-vertex(touches[i+1].x,touches[i+1].y);
+vertex(touches[i+2].x,touches[i+2].y);
+vertex(touches[i+3].x,touches[i+3].y);
 //vertex(60, 20);
 //vertex(70, 75);
 //vertex(80, 20);
 endShape();
     //line(touches[i].x,touches[i].y,touches[i+1].x,touches[i+1].y);
     }
- else{
- beginShape(TRIANGLES);
-vertex(touches[0].x,touches[0].y);
-vertex(touches[0].x,touches[0].y);
-vertex(touches[0].x,touches[0].y);
-endShape();
+ //else{
+// beginShape(TRIANGLES);
+//vertex(touches[0].x,touches[0].y);
+//vertex(touches[0].x,touches[0].y);
+//vertex(touches[0].x,touches[0].y);
+//endShape();
    // line(touches[i].x,touches[i].y,touches[0].x,touches[0].y);
 }
                                    
