@@ -16,23 +16,23 @@ function draw() {
   for(var i=0;i<touches.length;i++){
     if((i+1)<touches.length){
       beginShape(TRIANGLES);
-vertex(touches[i].x,touches[i].y,touches[i+1].30, touches[i+1].75);
-vertex(touches[i].x,touches[i].y,touches[i+1].40, touches[i+1].20);
-vertex(touches[i].x,touches[i].y,touches[i+1].50, touches[i+1].75);
-vertex(touches[i].x,touches[i].y,touches[i+1].60, touches[i+1].20);
-vertex(touches[i].x,touches[i].y,touches[i+1].70, touches[i+1].75);
-vertex(touches[i].x,touches[i].y,touches[i+1].80, touches[i+1].20);
+vertex(touches[i].x,touches[i].y,30, 75);
+vertex(touches[i].x,touches[i].y,40, 20);
+vertex(touches[i].x,touches[i].y,50, 75);
+vertex(touches[i].x,touches[i].y,60, 20);
+vertex(touches[i].x,touches[i].y,70, 75);
+vertex(touches[i].x,touches[i].y,80, 20);
 endShape();
     //line(touches[i].x,touches[i].y,touches[i+1].x,touches[i+1].y);
     }
  else{
 beginShape(TRIANGLES);
-vertex(touches[i].x,touches[i].y,touches[0].30, touches[0].75);
-vertex(touches[i].x,touches[i].y,touches[0].40, touches[0].20);
-vertex(touches[i].x,touches[i].y,touches[0].50, touches[0].75);
-vertex(touches[i].x,touches[i].y,touches[0].60, touches[0].20);
-vertex(touches[i].x,touches[i].y,touches[0].70, touches[0].75);
-vertex(touches[i].x,touches[i].y,touches[0].80, touches[0].20);
+vertex(touches[i].x,touches[i].y,30, 75);
+vertex(touches[i].x,touches[i].y,40, 20);
+vertex(touches[i].x,touches[i].y,50, 75);
+vertex(touches[i].x,touches[i].y,60, 20);
+vertex(touches[i].x,touches[i].y,70, 75);
+vertex(touches[i].x,touches[i].y,80, 20);
 endShape();
    // line(touches[i].x,touches[i].y,touches[0].x,touches[0].y);
 }
