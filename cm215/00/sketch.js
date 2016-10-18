@@ -15,12 +15,12 @@ function draw() {
   
   for(var i=0;i<touches.length;i++){
     if((i+1)<touches.length){
-      beginShape(LINES);
+      beginShape();
 vertex(30, 20);
 vertex(85, 20);
 vertex(85, 75);
 vertex(30, 75);
-endShape();
+endShape(CLOSE);
     //line(touches[i].x,touches[i].y,touches[i+1].x,touches[i+1].y);
     }
  // else{ 
