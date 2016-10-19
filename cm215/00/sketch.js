@@ -16,9 +16,9 @@ function draw() {
   for(var i=0;i<touches.length;i++){
     ellipse(touches[i].x,touches[i].y);         
     if((i+1)<touches.length){
-      fill(125);
-      beginShape();
      
+      beginShape();
+   fill(random(255),random(255),random(255));  
 vertex(touches[i].x, touches[i].y);
 vertex(touches[i].x, touches[i].y);
 vertex(touches[i+1].x, touches[i+1].y);
@@ -27,9 +27,9 @@ endShape(CLOSE);
     //line(touches[i].x,touches[i].y,touches[i+1].x,touches[i+1].y);
     }
  else{
-   fill(125);
+ 
 beginShape();
-
+fill(random(255),random(255),random(255));
 vertex(touches[i].x, touches[i].y);
 vertex(touches[i].x, touches[i].y);
 vertex(touches[0].x, touches[0].y);
