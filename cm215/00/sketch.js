@@ -11,14 +11,14 @@ function setup() {
 }
 
 function draw() {
-  background(255);
+  background(125);
   
   for(var i=0;i<touches.length;i++){
     ellipse(touches[i].x,touches[i].y);         
     if((i+1)<touches.length){
      
       beginShape();
-     fill(0);
+    
 vertex(touches[i].x, touches[i].y);
 
 vertex(touches[i].x, touches[i].y);
@@ -32,11 +32,11 @@ endShape(CLOSE);
  else{
  
 beginShape();
-fill(0);
+
 vertex(touches[i].x, touches[i].y);
 
 vertex(touches[i].x, touches[i].y);
-fill(0,255,0);
+
 vertex(touches[0].x, touches[0].y);
 
 vertex(touches[0].x, touches[0].y);
