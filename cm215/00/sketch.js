@@ -27,6 +27,7 @@ endShape(CLOSE);
     //line(touches[i].x,touches[i].y,touches[i+1].x,touches[i+1].y);
     }
  else{
+   fill(125);
 beginShape();
 
 vertex(touches[i].x, touches[i].y);
