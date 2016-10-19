@@ -17,7 +17,7 @@ function draw() {
     if((i+1)<touches.length){
       
       beginShape();
-      fill(random(255,0,0));
+      fill(125);
 vertex(touches[i].x, touches[i].y);
 vertex(touches[i].x, touches[i].y);
 vertex(touches[i+1].x, touches[i+1].y);
@@ -27,7 +27,7 @@ endShape(CLOSE);
     }
  else{
 beginShape();
-fill(random(255,0,0));
+fill(125);
 vertex(touches[i].x, touches[i].y);
 vertex(touches[i].x, touches[i].y);
 vertex(touches[0].x, touches[0].y);
