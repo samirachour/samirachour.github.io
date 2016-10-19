@@ -16,10 +16,10 @@ function draw() {
   for(var i=0;i<touches.length;i++){
     if((i+1)<touches.length){
       beginShape();
-vertex(width/2, 20);
-vertex(width, 20);
-vertex(width, height/2);
-vertex(width/2, height/2);
+vertex(touches[i].x, touches[i].y);
+vertex(touches[i].x, touches[i].y);
+vertex(touches[i+1].x, touches[i+1].y);
+vertex(touches[i+1].x, touches[i+1].y);
 endShape(CLOSE);
     //line(touches[i].x,touches[i].y,touches[i+1].x,touches[i+1].y);
     }
