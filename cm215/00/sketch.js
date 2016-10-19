@@ -16,23 +16,23 @@ function draw() {
   for(var i=0;i<touches.length;i++){
     ellipse(touches[i].x,touches[i].y);         
     if((i+1)<touches.length){
-      
+      fill(125);
       beginShape();
      
-vertex(touches[i].x, touches[i].y,150,150);
-vertex(touches[i].x, touches[i].y,150,150);
-vertex(touches[i+1].x, touches[i+1].y,150,150);
-vertex(touches[i+1].x, touches[i+1].y,150,150);
+vertex(touches[i].x, touches[i].y);
+vertex(touches[i].x, touches[i].y);
+vertex(touches[i+1].x, touches[i+1].y);
+vertex(touches[i+1].x, touches[i+1].y);
 endShape(CLOSE);
     //line(touches[i].x,touches[i].y,touches[i+1].x,touches[i+1].y);
     }
  else{
 beginShape();
 
-vertex(touches[i].x, touches[i].y,150,150);
-vertex(touches[i].x, touches[i].y,150,150);
-vertex(touches[0].x, touches[0].y,150,150);
-vertex(touches[0].x, touches[0].y,150,150);
+vertex(touches[i].x, touches[i].y);
+vertex(touches[i].x, touches[i].y);
+vertex(touches[0].x, touches[0].y);
+vertex(touches[0].x, touches[0].y);
 endShape(CLOSE);
    // line(touches[i].x,touches[i].y,touches[0].x,touches[0].y);
 }
