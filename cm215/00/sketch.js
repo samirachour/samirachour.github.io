@@ -19,20 +19,20 @@ function draw() {
       
       beginShape();
      
-vertex(touches[i].x, touches[i].y);
-vertex(touches[i].x, touches[i].y);
-vertex(touches[i+1].x, touches[i+1].y);
-vertex(touches[i+1].x, touches[i+1].y);
+vertex(touches[i].x, touches[i].y,150,150);
+vertex(touches[i].x, touches[i].y,150,150);
+vertex(touches[i+1].x, touches[i+1].y,150,150);
+vertex(touches[i+1].x, touches[i+1].y,150,150);
 endShape(CLOSE);
     //line(touches[i].x,touches[i].y,touches[i+1].x,touches[i+1].y);
     }
  else{
 beginShape();
 
-vertex(touches[i].x, touches[i].y);
-vertex(touches[i].x, touches[i].y);
-vertex(touches[0].x, touches[0].y);
-vertex(touches[0].x, touches[0].y);
+vertex(touches[i].x, touches[i].y,150,150);
+vertex(touches[i].x, touches[i].y,150,150);
+vertex(touches[0].x, touches[0].y,150,150);
+vertex(touches[0].x, touches[0].y,150,150);
 endShape(CLOSE);
    // line(touches[i].x,touches[i].y,touches[0].x,touches[0].y);
 }
