@@ -6,7 +6,7 @@ function setup() {
   createCanvas(windowWidth,windowHeight);
   ellipseMode(CENTER);
   stroke(0);
-  fill(255,0,0);
+  fill(255);
   strokeWeight(5);
 }
 
@@ -14,7 +14,8 @@ function draw() {
   background(255);
   
   for(var i=0;i<touches.length;i++){
-    ellipse(touches[i].x,touches[i].y,75);         
+    ellipse(touches[i].x,touches[i].y,75); 
+    fill(255,0,0);
     if((i+1)<touches.length){
      
       beginShape();
