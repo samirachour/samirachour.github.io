@@ -33,7 +33,7 @@ endShape(CLOSE);
  else{
  
 beginShape();
-fill(255,0,0);
+//fill(255,0,0);
 vertex(touches[i].x, touches[i].y);
 
 vertex(touches[i].x, touches[i].y);
