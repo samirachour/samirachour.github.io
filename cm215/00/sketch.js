@@ -22,7 +22,7 @@ function draw() {
 vertex(touches[i].x, touches[i].y);
 
 vertex(touches[i].x, touches[i].y);
-fill(0,255,0);
+
 vertex(touches[i+1].x, touches[i+1].y);
 
 vertex(touches[i+1].x, touches[i+1].y);
