@@ -12,7 +12,7 @@ function setup() {
 
 function draw() {
   background(255);
-  noFill(0);
+  noFill();
   for(var i=0;i<touches.length;i++){
   ellipse(touches[i].x,touches[i].y,50,50);   
   if((i+1)<touches.length){
