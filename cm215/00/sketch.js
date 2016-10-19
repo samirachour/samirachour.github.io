@@ -15,8 +15,9 @@ function draw() {
   noFill();
   for(var i=0;i<touches.length;i++){
   ellipse(touches[i].x,touches[i].y,50,50);   
-  if((i+1)<touches.length){
-  }   
+ 
+  } 
+  
   fill(150,150);
 
   beginShape();
@@ -26,7 +27,7 @@ function draw() {
   endShape(CLOSE);
     
   }
-}
+
 
 //function touchStarted() {
   
