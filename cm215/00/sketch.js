@@ -32,13 +32,13 @@ endShape(CLOSE);
  else{
  
 beginShape();
-//fill(random(255),random(255),random(255));
+fill(random(255),random(255),random(255));
 vertex(touches[i].x, touches[i].y);
-//fill(random(255),random(255),random(255));
+fill(random(255),random(255),random(255));
 vertex(touches[i].x, touches[i].y);
-//fill(random(255),random(255),random(255));
+fill(random(255),random(255),random(255));
 vertex(touches[0].x, touches[0].y);
-//fill(random(255),random(255),random(255));
+fill(random(255),random(255),random(255));
 vertex(touches[0].x, touches[0].y);
 endShape(CLOSE);
    // line(touches[i].x,touches[i].y,touches[0].x,touches[0].y);
