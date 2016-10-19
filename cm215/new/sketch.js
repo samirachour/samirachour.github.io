@@ -1,6 +1,7 @@
 var ballSize;
 function setup() {
   createCanvas(windowWidth,windowHeight);
+  
   ellipseMode(CENTER);
   ballSize = 50;
 }
@@ -17,6 +18,6 @@ function draw() {
 }
   
 function drawBall(){
- fill(120);
+ fill(120,250);
  ellipse(windowWidth/2,windowHeight/2, ballSize, ballSize) 
 }
