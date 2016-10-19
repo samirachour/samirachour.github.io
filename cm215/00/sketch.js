@@ -17,7 +17,7 @@ function draw() {
   ellipse(touches[i].x,touches[i].y,50,50);   
   } 
   
-  fill(random(0,255),random(0,255),random(0,255)); 
+  fill(150,150,255);
 
   beginShape();
   for(var i=0;i<touches.length;i++){
