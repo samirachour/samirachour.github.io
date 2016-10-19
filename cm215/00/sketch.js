@@ -23,10 +23,15 @@ vertex(touches[i+1].x, touches[i+1].y);
 endShape(CLOSE);
     //line(touches[i].x,touches[i].y,touches[i+1].x,touches[i+1].y);
     }
- //else{
-
+ else{
+beginShape();
+vertex(touches[i].x, touches[i].y);
+vertex(touches[i].x, touches[i].y);
+vertex(touches[0].x, touches[0].y);
+vertex(touches[0].x, touches[0].y);
+endShape(CLOSE);
    // line(touches[i].x,touches[i].y,touches[0].x,touches[0].y);
-//}
+}
                                    
     ellipse(touches[i].x,touches[i].y,150,150);
    
