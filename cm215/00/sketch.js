@@ -6,7 +6,7 @@ function setup() {
   createCanvas(windowWidth,windowHeight);
   ellipseMode(CENTER);
   stroke(0);
-  fill(0);
+  fill(255,0,0);
   strokeWeight(5);
 }
 
