@@ -18,10 +18,13 @@ function draw() {
     if((i+1)<touches.length){
      
       beginShape();
-   fill(random(255),random(255),random(255));  
+   stroke(random(255),random(255),random(255));  
 vertex(touches[i].x, touches[i].y);
+stroke(random(255),random(255),random(255));
 vertex(touches[i].x, touches[i].y);
+stroke(random(255),random(255),random(255));
 vertex(touches[i+1].x, touches[i+1].y);
+stroke(random(255),random(255),random(255));
 vertex(touches[i+1].x, touches[i+1].y);
 endShape(CLOSE);
     //line(touches[i].x,touches[i].y,touches[i+1].x,touches[i+1].y);
@@ -29,10 +32,13 @@ endShape(CLOSE);
  else{
  
 beginShape();
-fill(random(255),random(255),random(255));
+stroke(random(255),random(255),random(255));
 vertex(touches[i].x, touches[i].y);
+stroke(random(255),random(255),random(255));
 vertex(touches[i].x, touches[i].y);
+stroke(random(255),random(255),random(255));
 vertex(touches[0].x, touches[0].y);
+stroke(random(255),random(255),random(255));
 vertex(touches[0].x, touches[0].y);
 endShape(CLOSE);
    // line(touches[i].x,touches[i].y,touches[0].x,touches[0].y);
