@@ -11,7 +11,7 @@ function setup() {
 }
 
 function draw() {
-  background(125);
+  background(255);
   
   for(var i=0;i<touches.length;i++){
     ellipse(touches[i].x,touches[i].y);         
@@ -49,7 +49,7 @@ endShape(CLOSE);
   }
 }
 
-//function touchStarted() {
+function touchStarted() {
   
- //fill(random(0,255),random(0,255),random(0,255)); 
-//}
+ fill(random(0,255),random(0,255),random(0,255)); 
+}
