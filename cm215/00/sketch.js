@@ -14,7 +14,7 @@ function draw() {
   background(255);
   
   for(var i=0;i<touches.length;i++){
-    ellipse(touches[i].x,touches[i].y);         
+             
     if((i+1)<touches.length){
      
       beginShape();
@@ -45,7 +45,7 @@ endShape(CLOSE);
 }
                                    
     
-   
+   ellipse(touches[i].x,touches[i].y);
   }
 }
 
