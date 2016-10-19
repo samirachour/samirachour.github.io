@@ -18,7 +18,7 @@ function draw() {
  
   } 
   
-  fill(random(0,255),random(0,255),random(0,255));
+  fill(150,150,50);
 
   beginShape();
   for(var i=0;i<touches.length;i++){
