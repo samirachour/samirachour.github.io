@@ -15,6 +15,7 @@ function draw() {
   
   for(var i=0;i<touches.length;i++){
     if((i+1)<touches.length){
+      fill(random(255,0,0));
       beginShape();
 vertex(touches[i].x, touches[i].y);
 vertex(touches[i].x, touches[i].y);
@@ -38,7 +39,7 @@ endShape(CLOSE);
   }
 }
 
-function touchStarted() {
+//function touchStarted() {
   
- fill(random(0,255),random(0,255),random(0,255)); 
-}
+ //fill(random(0,255),random(0,255),random(0,255)); 
+//}
