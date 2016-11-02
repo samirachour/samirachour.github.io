@@ -10,7 +10,7 @@ function setup() {
  createCanvas(windowWidth,windowHeight);
  ellipseMode(CENTER);
  ballSize = 50;
- bSize = 25;
+ bSize = 30;
  pX = windowWidth/2;
  pY = windowHeight/2;
  
@@ -58,13 +58,13 @@ function draw() {
  }
  
   if (dist(pX, pY, pX1, pY1)<=(R+r1)){
- text("waw", windowWidth/2, windowHeight/2, 200,200);
+ text("Waw", windowWidth/2, windowHeight/2, 200,200);
 }
 if (dist(pX, pY, pX2, pY2)<=(R+r2)){
- text("go", windowWidth/2, windowHeight/2, 200,200);
+ text("Go", windowWidth/2, windowHeight/2, 200,200);
 }
 if (dist(pX, pY, pX3, pY3)<=(R+r3)){
- text("ya", windowWidth/2, windowHeight/2, 200,200);
+ text("Yah", windowWidth/2, windowHeight/2, 200,200);
 }
 }
 function drawBall(){
