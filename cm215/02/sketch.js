@@ -57,7 +57,7 @@ function draw() {
    vY = -vY;
  }
   if (dist(pX, pY, pX1, pY1)<=(R+r1));
- 
+ text("waw", windowWidth/2, windowHeight/2, 200,200);
 }
 
 function drawBall(){
