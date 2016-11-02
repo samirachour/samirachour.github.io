@@ -66,6 +66,7 @@ if (dist(pX, pY, pX2, pY2)<=(R+r2)){
 if (dist(pX, pY, pX3, pY3)<=(R+r3)){
  text("ya", windowWidth/2, windowHeight/2, 200,200);
 }
+}
 function drawBall(){
   
  fill(0);
