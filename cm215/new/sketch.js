@@ -1,23 +1,34 @@
-var ballSize;
+document.ontouchmove = function(event){
+  event.preventDefault();
+}
+
 function setup() {
   createCanvas(windowWidth,windowHeight);
-  
   ellipseMode(CENTER);
-  ballSize = 50;
+  stroke(0);
+  noFill();
+  strokeWeight(5);
 }
 
 function draw() {
+  background(255);
+  noFill();
+  for(var i=0;i<touches.length;i++){
+  ellipse(touches[i].x,touches[i].y,50,50);   
+  } 
   
- background(255);
- drawBall();
- textSize(40);
- 
- (text("Rx: " + floor(rotationX), 100, 100));
- (text("Ry: " + floor(rotationY), 100, 150));
- (text("Rz: " + floor(rotationZ), 100, 200));
-}
+  fill(150,150,255);
+
+  beginShape();
+  for(var i=0;i<touches.length;i++){
+  vertex(touches[i].x, touches[i].y);
+  }
+  endShape(CLOSE);
+    
+  }
+
+
+//function touchStarted() {
   
-function drawBall(){
- fill(120,250);
- ellipse(windowWidth/2,rotationX+windowHeight/2, ballSize, ballSize) 
-}
+// fill(random(0,255),random(0,255),random(0,255)); 
+//}
