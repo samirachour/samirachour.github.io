@@ -52,7 +52,7 @@ function draw() {
 
 function drawBall(){
   
- fill(125);
+ fill(255);
  ellipse(pX, pY, ballSize,ballSize);
  
  fill(255,255,0);
