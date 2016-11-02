@@ -56,10 +56,16 @@ function draw() {
  if (pY + ballSize/2 > windowHeight || pY - ballSize/2 < 0  ){
    vY = -vY;
  }
-  if (dist(pX, pY, pX1, pY1)<=(R+r1));
+ 
+  if (dist(pX, pY, pX1, pY1)<=(R+r1)){
  text("waw", windowWidth/2, windowHeight/2, 200,200);
 }
-
+if (dist(pX, pY, pX2, pY2)<=(R+r2)){
+ text("go", windowWidth/2, windowHeight/2, 200,200);
+}
+if (dist(pX, pY, pX3, pY3)<=(R+r3)){
+ text("ya", windowWidth/2, windowHeight/2, 200,200);
+}
 function drawBall(){
   
  fill(0);
