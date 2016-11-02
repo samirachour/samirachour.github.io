@@ -11,11 +11,11 @@ function setup() {
  ballSize = 50;
  pX = windowWidth/2;
  pY = windowHeight/2;
- pX1 = windowWidth/2 +30;
+ pX1 = windowWidth/2 +60;
  pY1 = windowHeight/2;
- pX2 = windowWidth/2 -30;
+ pX2 = windowWidth/2 -60;
  pY2 = windowHeight/2;
- pX3 = windowWidth/2 ;
+ pX3 = windowWidth/2;
  pY3 = windowHeight/2;
  vX = 0;
  vY = 0;
