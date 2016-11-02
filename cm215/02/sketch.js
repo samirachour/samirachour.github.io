@@ -37,6 +37,7 @@ function draw() {
  background(255);
  drawBall();
  textSize(40);
+ fill(0,0,255),
  text("Rx: " + floor(rotationX), 100, 100);
  text("Ry: " + floor(rotationY), 100, 150);
  text("Rz: " + floor(rotationZ), 100, 200);
