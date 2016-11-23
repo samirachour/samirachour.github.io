@@ -9,7 +9,10 @@ var R, r1, r2, r3;
 function setup() {
   
  createCanvas(windowWidth,windowHeight);
- ellipseMode(CENTER);
+ for (var i=0; i < 100; i++){
+   obstacles[i] = new Obstacle("malus");
+ }
+ /*ellipseMode(CENTER);
  ballSize = 50;
  bSize = 30;
  pX = windowWidth/2;
@@ -30,15 +33,42 @@ function setup() {
  r1 = bSize/2;
  r2 = bSize/2;
  r3 = bSize/2;
- 
- for (var i=0; i < 100; i++){
-   obstacles[i] = new Obstacle("malus");
- }
- 
+ */
 }
 
 function draw() {
   
+   for (var i=0; i < 100; i++){
+   obstacles[i].display();
+  }
+}
+  function Obstacle(genre){
+    this.type = genre;
+    this.ballSize = 50;
+    this.bSize = 30;
+    this.pX = windowWidth/2;
+    this. pY = windowHeight/2;
+ 
+    this.pX1 = random(5,windowWidth);
+    this.pY1 = random(5,windowHeight);
+ 
+    this.pX2 = random(5,windowWidth);
+    this.pY2 = random(5,windowHeight);
+ 
+    this. pX3 = random(5,windowWidth);
+    this.pY3 = random(5,windowHeight);
+    this.vX = 0;
+    this.vY = 0;
+    this.f  = 0.01;
+    this.R  = ballSize/2;
+    this.r1 = bSize/2;
+    this.r2 = bSize/2;
+    this.r3 = bSize/2;
+    
+    this.display = function(){
+      
+    }
+
  background(255);
  drawBall();
  textSize(40);
@@ -46,7 +76,6 @@ function draw() {
  text("Rx: " + floor(rotationX), 100, 100);
  text("Ry: " + floor(rotationY), 100, 150);
  text("Rz: " + floor(rotationZ), 100, 200);
- text:("score:" +score, 100,200);
  
  aX = rotationY * f;
  vX += aX;
@@ -73,14 +102,7 @@ if (dist(pX, pY, pX2, pY2)<=(R+r2)){
 if (dist(pX, pY, pX3, pY3)<=(R+r3)){
  text("Yah", windowWidth/2, windowHeight/2, 200,200);
 }
-for (var i=0; i < 100; i++){
-  obstacles[i].display();
 }
-}
-
-
-
-
 function drawBall(){
   
  fill(0);
@@ -94,18 +116,4 @@ function drawBall(){
  
  fill(0,255,0);
  ellipse(pX3, pY3, bSize,bSize);
-
-}
-
-function Obstacle(genre){
-  this.type = genre;
-  this.x = random(0,windowWidth);
-  this.y = random(0,windowHeight);
-  this.size = random(20,50);
-  this.couleur = color(random(0,255),random(0,255),random(0,255));
-  
-  this.display = function(){
-    fill(this.couleur);
-    ellipse(this.x,this.y,this.size,this.size);
-  }
 }
