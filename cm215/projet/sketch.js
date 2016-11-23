@@ -67,6 +67,7 @@ function draw() {
     pY = windowHeight - ballSize / 2;
   } else if (pY - ballSize / 2 < 0){
     vY = -vY * bounce;
+     pY =  ballSize / 2;
   }
   aY = rotationX * f;
   vY += aY;
