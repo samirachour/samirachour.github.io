@@ -49,10 +49,10 @@ function draw() {
   text("Rz: " + floor(rotationZ), 100, 200);*/
   text("Score:" + score, 100, 250);
 
-   if (pX + ballSize / 2 >= windowWidth) {
+   if (pX + ballSize / 2 > windowWidth) {
     vX = -vX * bounce;
     pX = windowWidth - ballSize / 2;
-  } else if (pX - ballSize / 2 <= 0) {
+  } else if (pX - ballSize / 2 < 0) {
     vX = -vX * bounce;
     pX = ballSize / 2;
    }
@@ -75,7 +75,7 @@ function draw() {
 
 for (var i = 0; i < 3; i++) {
   if (dist(pX, pY, obstacles[i].x,obstacles[i].y) <= (R + (obstacles[i].size)/2) ) {
-    score += this.result;
+    score += obstacles[i].result;
   }
     obstacles[i].display();
   }
