@@ -5,6 +5,7 @@ var pX, pY, pX1, pY1, pX2, pY2, pX3, pY3;
 var aX, aY;
 var f;
 var R, r1, r2, r3;
+var score;
 
 function setup() {
   
@@ -41,7 +42,7 @@ function draw() {
   
  background(255);
  drawBall();
- textSize(20);
+ textSize(40);
  fill(0,0,255),
  text("Rx: " + floor(rotationX), 100, 100);
  text("Ry: " + floor(rotationY), 100, 150);
