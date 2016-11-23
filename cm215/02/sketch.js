@@ -20,6 +20,7 @@ function setup() {
   f = 0.01;
   bounce = 0.5;
   R = ballSize / 2;
+  score = 0;
 
   for (var i = 0; i < 3; i++) {
     var typeBalle = random(0,3);
