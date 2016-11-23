@@ -42,7 +42,7 @@ function draw() {
 
   background(255);
   drawBall();
-  textSize(20);
+  textSize(40);
   fill(0, 0, 255),
   /*text("Rx: " + floor(rotationX), 100, 100);
   text("Ry: " + floor(rotationY), 100, 150);
@@ -72,8 +72,8 @@ function draw() {
   pY += vY;
 
 for (var i = 0; i < 3; i++) {
-  if (dist(pX, pY, obstacles[i].posX,obstacles[i].posY) <= (R + (obstacles[i].size)/2) ) {
-    score += this.point;
+  if (dist(pX, pY, obstacles[i].x,obstacles[i].y) <= (R + (obstacles[i].size)/2) ) {
+    score += this.result;
   }
     obstacles[i].display();
   }
@@ -91,23 +91,23 @@ function drawBall() {
 
 function Balle(genre) {
   this.type = genre;
-  this.posX = random(0, windowWidth);
-  this.posY = random(0, windowHeight);
+  this.x = random(0, windowWidth);
+  this.y = random(0, windowHeight);
   this.size = 30;
   this.couleur = color(random(0, 255), random(0, 255), random(0, 255));
   
   if(genre=="bonus"){
-    this.point = 5;
+    this.result = 5;
   }
   if(genre=="malus"){
-    this.point = -3;
+    this.result = -3;
   }
   if(genre=="obstacle"){
-    this.point = 1;
+    this.result = 1;
   }
 
   this.display = function() {
     fill(this.couleur);
-    ellipse(this.posX, this.posY, this.size, this.size);
+    ellipse(this.x, this.y, this.size, this.size);
   }
 }
