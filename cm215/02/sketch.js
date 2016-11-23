@@ -18,6 +18,7 @@ function setup() {
   vX = 0;
   vY = 0;
   f = 0.01;
+  bounce = 0.5;
   R = ballSize / 2;
 
   for (var i = 0; i < 3; i++) {
@@ -42,10 +43,10 @@ function draw() {
   drawBall();
   textSize(40);
   fill(0, 0, 255),
-    text("Rx: " + floor(rotationX), 100, 100);
+  text("Rx: " + floor(rotationX), 100, 100);
   text("Ry: " + floor(rotationY), 100, 150);
   text("Rz: " + floor(rotationZ), 100, 200);
-  text("Score:" + score, 100, 200);
+  text("Score:" + score, 100, 250);
 
   aX = rotationY * f;
   vX += aX;
