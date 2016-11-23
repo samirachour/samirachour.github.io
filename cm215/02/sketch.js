@@ -70,13 +70,10 @@ function draw() {
   vY += aY;
   pY += vY;
 
-
-
-  if (dist(pX, pY, obstacles[i].x,obstacles[i].y) <= (R + (obstacles[i].size)/2) ) {
+for (var i = 0; i < 3; i++) {
+  if (dist(pX, pY, obstacles[i].posX,obstacles[i].posY) <= (R + (obstacles[i].size)/2) ) {
     score += this.point;
   }
- 
-  for (var i = 0; i < 3; i++) {
     obstacles[i].display();
   }
 }
@@ -93,8 +90,8 @@ function drawBall() {
 
 function Balle(genre) {
   this.type = genre;
-  this.x = random(0, windowWidth);
-  this.y = random(0, windowHeight);
+  this.posX = random(0, windowWidth);
+  this.posY = random(0, windowHeight);
   this.size = 30;
   this.couleur = color(random(0, 255), random(0, 255), random(0, 255));
   
@@ -110,6 +107,6 @@ function Balle(genre) {
 
   this.display = function() {
     fill(this.couleur);
-    ellipse(this.x, this.y, this.size, this.size);
+    ellipse(this.posX, this.posY, this.size, this.size);
   }
 }
