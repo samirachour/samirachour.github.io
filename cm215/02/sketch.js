@@ -43,46 +43,39 @@ function draw() {
   drawBall();
   textSize(40);
   fill(0, 0, 255),
-  text("Rx: " + floor(rotationX), 100, 100);
+  /*text("Rx: " + floor(rotationX), 100, 100);
   text("Ry: " + floor(rotationY), 100, 150);
-  text("Rz: " + floor(rotationZ), 100, 200);
+  text("Rz: " + floor(rotationZ), 100, 200);*/
   text("Score:" + score, 100, 250);
 
-  aX = rotationY * f;
-  vX += aX;
-  pX += vX;
-
-  aY = rotationX * f;
-  vY += aY;
-  pY += vY;
-
-  if (pX + ballSize / 2 >= windowWidth) {
+   if (pX + ballSize / 2 >= windowWidth) {
     vX = -vX * bounce;
     pX = windowWidth - ballSize / 2;
   } else if (pX - ballSize / 2 <= 0) {
     vX = -vX * bounce;
+   }
    
-  }
+   aX = rotationY * f;
+  vX += aX;
+  pX += vX;
 
+ 
   if (pY + ballSize / 2 > windowHeight) {
     vY = -vY * bounce;
     pY = windowHeight - ballSize / 2;
   } else if (pY - ballSize / 2 < 0){
     vY = -vY * bounce;
   }
+  aY = rotationX * f;
+  vY += aY;
+  pY += vY;
 
 
 
-
-  /*if (dist(pX, pY, pX1, pY1) <= (R + r1)) {
-    text("Waw", windowWidth / 2, windowHeight / 2, 200, 200);
+  if (dist(pX, pY, obstacles[i].x,obstacles[i].y) <= (R + (obstacles[i].size)/2) ) {
+    score += this.point;
   }
-  if (dist(pX, pY, pX2, pY2) <= (R + r2)) {
-    text("Go", windowWidth / 2, windowHeight / 2, 200, 200);
-  }
-  if (dist(pX, pY, pX3, pY3) <= (R + r3)) {
-    text("Yah", windowWidth / 2, windowHeight / 2, 200, 200);
-  }*/
+ 
   for (var i = 0; i < 3; i++) {
     obstacles[i].display();
   }
@@ -104,6 +97,16 @@ function Balle(genre) {
   this.y = random(0, windowHeight);
   this.size = 30;
   this.couleur = color(random(0, 255), random(0, 255), random(0, 255));
+  
+  if(genre=="bonus"){
+    this.point = 5;
+  }
+  if(genre=="malus"){
+    this.point = -3;
+  }
+  if(genre=="obstacle"){
+    this.point = 1;
+  }
 
   this.display = function() {
     fill(this.couleur);
