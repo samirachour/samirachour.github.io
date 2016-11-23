@@ -32,7 +32,7 @@ function setup() {
  r2 = bSize/2;
  r3 = bSize/2;
  
- for (var i=0; i < 100; i++){
+ for (var i=0; i < 3; i++){
    obstacles[i] = new Obstacle("malus");
  }
  
@@ -74,7 +74,7 @@ if (dist(pX, pY, pX2, pY2)<=(R+r2)){
 if (dist(pX, pY, pX3, pY3)<=(R+r3)){
  text("Yah", windowWidth/2, windowHeight/2, 200,200);
 }
-for (var i=0; i < 100; i++){
+for (var i=0; i < 3; i++){
   obstacles[i].display();
 }
 }
