@@ -75,7 +75,9 @@ function draw() {
 
 for (var i = 0; i < 3; i++) {
   if (dist(pX, pY, obstacles[i].x,obstacles[i].y) <= (R + (obstacles[i].size)/2) ) {
+    
     score += obstacles[i].result;
+    
   }
     obstacles[i].display();
   }
@@ -105,7 +107,7 @@ function Balle(genre) {
     this.result = -3;
   }
   if(genre=="obstacle"){
-    this.result = 1;
+    this.result = 0;
   }
 
   this.display = function() {
