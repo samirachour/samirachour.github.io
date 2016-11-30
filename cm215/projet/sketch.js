@@ -21,18 +21,19 @@ function setup() {
   bounce = 0.5;
   R = ballSize / 2;
   score = 0;
-
+  toto = 0;
   for (var i = 0; i < 3; i++) {
-    var typeBalle = random(0,3);
-    
-      if(typeBalle > 1){
-        typeBalle = "bonus";
-      }else if(typeBalle < 1){
-        typeBalle = "malus";
-      }else{
-        typeBalle = "obstacle";
+    if(toto === 0){
+        obstacles[i] = new Balle("bonus");
+        toto++;
+      }else if(toto == 1){
+        obstacles[i] = new Balle("malus");
+        toto++;
+      }else if(toto == 2){
+        obstacles[i] = new Balle("obstacle");
+        toto = 0;
       }
-    obstacles[i] = new Balle(typeBalle);
+    
     
   }
 
@@ -42,11 +43,9 @@ function draw() {
 
   background(255);
   drawBall();
-  textSize(40);
+  textSize(20);
   fill(0, 0, 255),
-  /*text("Rx: " + floor(rotationX), 100, 100);
-  text("Ry: " + floor(rotationY), 100, 150);
-  text("Rz: " + floor(rotationZ), 100, 200);*/
+ 
   text("Score:" + score, 100, 250);
 
    if (pX + ballSize / 2 > windowWidth) {
