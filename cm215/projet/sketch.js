@@ -36,7 +36,7 @@ function draw() {
 
   background(255);
   drawBall();
-  textSize(20);
+  textSize(30);
   fill(0, 0, 255);
   for (i = 0; i < 3; i++) {
     obstacles[i].drawAccident();
@@ -89,6 +89,7 @@ function draw() {
         if (obstacles[i].colision === false) {
           obstacles[i].colision = true;
           score -= 5;
+          score += obstacles[i].result;
         }
       }
     } else {
@@ -96,12 +97,12 @@ function draw() {
     }
   }
 }
-/* score += obstacles[i].result;
+ /*score += obstacles[i].result;
   
-}
-  obstacles[i].display();
-}*/
 
+  obstacles[i].display();
+
+*/
 function drawBall() {
 
   fill(0);
