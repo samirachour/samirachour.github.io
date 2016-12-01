@@ -36,10 +36,10 @@ function draw() {
 
   background(255);
   drawBall();
-  textSize(50);
+  textSize(20);
   fill(0, 0, 255);
   for (i = 0; i < 3; i++) {
-    obstacles[i].drawAccident();
+  obstacles[i].drawAccident();
   }
 
   aX = rotationY * f;
@@ -48,25 +48,24 @@ function draw() {
   aY = rotationX * f;
   vY += aY;
   pY += vY;
-
+  
   text("score:" + score, 100, 250);
-
-  if ((pX + ballSize / 2) > windowWidth) {
+  
+if ((pX + ballSize / 2) >= windowWidth) {
     vX = -vX * bounce;
     pX = windowWidth - ballSize / 2;
-
-
-  } else if ((pX - ballSize / 2 <= 0)) {
+  
+  
+} else if ((pX - ballSize / 2 <= 0)) {
     vX = -vX * bounce;
     pX = ballSize / 2;
-
-
-  }
-  if ((pY + ballSize / 2) >= windowHeight) {
+  
+  
+}if ((pY + ballSize / 2 )>= windowHeight) {
     vY = -vY * bounce;
     pY = windowHeight - ballSize / 2;
-
-
+  
+    
   } else if (pY - ballSize / 2 <= 0) {
     vY = -vY * bounce;
     pY = ballSize / 2;
@@ -74,7 +73,7 @@ function draw() {
 
 
   for (i = 0; i < 3; i++) {
-    if (dist(pX, pY, obstacles[i].pX, obstacles[i].pY) <= (R + (obstacles[i].size) / 2)) {
+    if (dist(pX, pY, obstacles[i].pX, obstacles[i].pY) <= R + obstacles[i].size / 2) {
 
       if (obstacles[i].type === "mur") {
         vX = -vX * bounce;
@@ -82,14 +81,13 @@ function draw() {
 
       } else if (obstacles[i].type === "bonus") {
         if (obstacles[i].colision === false) {
-          obstacles[i].colision = true;
-          score += 10;
+            obstacles[i].colision = true;
+            score += 10;
         }
       } else if (obstacles[i].type === "malus") {
-        if (obstacles[i].colision === false) {
-          obstacles[i].colision = true;
-          score -= 5;
-          score += obstacles[i].result;
+             if (obstacles[i].colision === false) {
+                obstacles[i].colision = true;
+                score -= 5;
         }
       }
     } else {
@@ -97,12 +95,12 @@ function draw() {
     }
   }
 }
- /*score += obstacles[i].result;
+/* score += obstacles[i].result;
   
-
+}
   obstacles[i].display();
+}*/
 
-*/
 function drawBall() {
 
   fill(0);
@@ -120,19 +118,19 @@ function Balle(genre) {
     this.color = color(0);
   }
 
-   if (obstacles == "bonus") {
-  this.result = 5;
-}
-if (obstacles == "malus") {
-  this.result = -3;
-}
-if (obstacles == "mur") {
-  this.result = 0;
-}
-this.colision = false;
+  /* if (obstacles == "bonus") {
+     this.result = 5;
+   }
+   if (obstacles == "malus") {
+     this.result = -3;
+   }
+   if (obstacles == "mur") {
+     this.result = 0;
+   }*/
+  this.colision = false;
 
-this.drawAccident = function() {
-  fill(this.couleur);
-  ellipse(this.pX, this.pY, this.size, this.size);
-}
+  this.drawAccident = function() {
+    fill(this.couleur);
+    ellipse(this.pX, this.pY, this.size, this.size);
+  }
 }
