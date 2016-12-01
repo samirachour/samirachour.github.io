@@ -8,7 +8,7 @@ var R;
 var score;
 var colision;
 var typeObstacle;
-
+/*********************************************************=============*******************************************************/
 function setup() {
 
   createCanvas(windowWidth, windowHeight);
@@ -31,7 +31,7 @@ function setup() {
   pX = windowWidth / 2;
   pY = windowHeight / 2;
 }
-
+/*********************************************************=============*******************************************************/
 function draw() {
 
   background(255);
@@ -95,19 +95,14 @@ if ((pX + ballSize / 2) >= windowWidth) {
     }
   }
 }
-/* score += obstacles[i].result;
-  
-}
-  obstacles[i].display();
-}*/
-
+/*********************************************************=============*******************************************************/
 function drawBall() {
 
   fill(0);
   ellipse(pX, pY, ballSize, ballSize);
 
 }
-
+/*********************************************************=============*******************************************************/
 function Balle(genre) {
   this.type = genre;
   this.pX = random(0, windowWidth);
@@ -118,15 +113,6 @@ function Balle(genre) {
     this.color = color(0);
   }
 
-  /* if (obstacles == "bonus") {
-     this.result = 5;
-   }
-   if (obstacles == "malus") {
-     this.result = -3;
-   }
-   if (obstacles == "mur") {
-     this.result = 0;
-   }*/
   this.colision = false;
 
   this.drawAccident = function() {
