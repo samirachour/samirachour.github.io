@@ -36,7 +36,7 @@ function draw() {
 
   background(255);
   drawBall();
-  textSize(20);
+  textSize(50);
   fill(0, 0, 255);
   for (i = 0; i < 3; i++) {
   obstacles[i].drawAccident();
@@ -73,7 +73,7 @@ if ((pX + ballSize / 2) >= windowWidth) {
 
 
   for (i = 0; i < 3; i++) {
-    if (dist(pX, pY, obstacles[i].pX, obstacles[i].pY) <= R + obstacles[i].size / 2) {
+    if (dist(pX, pY, obstacles[i].pX, obstacles[i].pY) <= ballSize / 2 + obstacles[i].size / 2) {
 
       if (obstacles[i].type === "mur") {
         vX = -vX * bounce;
