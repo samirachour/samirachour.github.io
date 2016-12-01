@@ -39,7 +39,7 @@ function draw() {
   textSize(20);
   fill(0, 0, 255);
   for (i = 0; i < 3; i++) {
-  obstacles[i].drawAccident();
+    obstacles[i].drawAccident();
   }
 
   aX = rotationY * f;
@@ -48,24 +48,25 @@ function draw() {
   aY = rotationX * f;
   vY += aY;
   pY += vY;
-  
+
   text("score:" + score, 100, 250);
-  
-if ((pX + ballSize / 2) > windowWidth) {
+
+  if ((pX + ballSize / 2) > windowWidth) {
     vX = -vX * bounce;
     pX = windowWidth - ballSize / 2;
-  
-  
-} else if ((pX - ballSize / 2 <= 0)) {
+
+
+  } else if ((pX - ballSize / 2 <= 0)) {
     vX = -vX * bounce;
     pX = ballSize / 2;
-  
-  
-}if ((pY + ballSize / 2 )>= windowHeight) {
+
+
+  }
+  if ((pY + ballSize / 2) >= windowHeight) {
     vY = -vY * bounce;
     pY = windowHeight - ballSize / 2;
-  
-    
+
+
   } else if (pY - ballSize / 2 <= 0) {
     vY = -vY * bounce;
     pY = ballSize / 2;
@@ -118,19 +119,19 @@ function Balle(genre) {
     this.color = color(0);
   }
 
-  /* if (obstacles == "bonus") {
-     this.result = 5;
-   }
-   if (obstacles == "malus") {
-     this.result = -3;
-   }
-   if (obstacles == "mur") {
-     this.result = 0;
-   }*/
-  this.colision = false;
+   if (obstacles == "bonus") {
+  this.result = 5;
+}
+if (obstacles == "malus") {
+  this.result = -3;
+}
+if (obstacles == "mur") {
+  this.result = 0;
+}
+this.colision = false;
 
-  this.drawAccident = function() {
-    fill(this.couleur);
-    ellipse(this.pX, this.pY, this.size, this.size);
-  }
+this.drawAccident = function() {
+  fill(this.couleur);
+  ellipse(this.pX, this.pY, this.size, this.size);
+}
 }
