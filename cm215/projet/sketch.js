@@ -8,7 +8,13 @@ var R;
 var score;
 var colision;
 var typeObstacle;
+var imgBack,imgBall;
 /*********************************************************=============*******************************************************/
+function preload(){
+  imgBack=loadImage("bois.jpg");
+  imgBall=loadImage("ball8.png");
+}
+
 function setup() {
 
   createCanvas(windowWidth, windowHeight);
@@ -34,7 +40,7 @@ function setup() {
 /*********************************************************=============*******************************************************/
 function draw() {
 
-  background(255);
+  background(imgBack,100);
   drawBall();
   textSize(30);
   fill(0, 0, 255);
