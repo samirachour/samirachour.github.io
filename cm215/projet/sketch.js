@@ -19,6 +19,7 @@ function setup() {
 
   createCanvas(windowWidth, windowHeight);
   ellipseMode(CENTER);
+   imgBall=loadImage("ball8.png");
   var typeObstacle = 0;
   for (var i = 0; i < 3; i++) {
     obstacles[0] = new Balle("bonus");
@@ -104,9 +105,9 @@ if ((pX + ballSize / 2) >= windowWidth) {
 /*********************************************************=============*******************************************************/
 function drawBall() {
 
-  fill(0);
-  ellipse(pX, pY, ballSize, ballSize);
-
+  //fill(0);
+  //ellipse(pX, pY, ballSize, ballSize);
+  image(imgBall,pX, pY, ballSize, ballSize);
 }
 /*********************************************************=============*******************************************************/
 function Balle(genre) {
@@ -123,6 +124,7 @@ function Balle(genre) {
 
   this.drawAccident = function() {
     fill(this.couleur);
-    ellipse(this.pX, this.pY, this.size, this.size);
+   ellipse(this.pX, this.pY, this.size, this.size);
+    
   }
 }
