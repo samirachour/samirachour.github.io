@@ -8,23 +8,27 @@ var R;
 var score;
 var colision;
 var typeObstacle;
-var imgBack,imgBall;
+var imgBack,imgBall,imgObs;
 /*********************************************************=============*******************************************************/
 function preload(){
   imgBack=loadImage("bois.jpg");
   imgBall=loadImage("ball8.png");
+  imgObs=loadImage("ball.png");
 }
 
 function setup() {
 
   createCanvas(windowWidth, windowHeight);
-  ellipseMode(CENTER);
+   ellipseMode(CENTER);
    imgBall=loadImage("ball8.png");
+   
   var typeObstacle = 0;
   for (var i = 0; i < 3; i++) {
+    //imgObs=loadImage("ball.png");
     obstacles[0] = new Balle("bonus");
     obstacles[1] = new Balle("malus");
     obstacles[2] = new Balle("mur");
+   
   }
 
   vX = 0;
@@ -56,7 +60,7 @@ function draw() {
   vY += aY;
   pY += vY;
   
-  text("score:" + score, 100, 250);
+  text("score:" + score, windowWidth/2, 50);
   
 if ((pX + ballSize / 2) >= windowWidth) {
     vX = -vX * bounce;
@@ -85,16 +89,20 @@ if ((pX + ballSize / 2) >= windowWidth) {
       if (obstacles[i].type === "mur") {
         vX = -vX * bounce;
         vY = -vY * bounce;
+        
+        
 
       } else if (obstacles[i].type === "bonus") {
         if (obstacles[i].colision === false) {
             obstacles[i].colision = true;
             score += 10;
+            
         }
       } else if (obstacles[i].type === "malus") {
              if (obstacles[i].colision === false) {
                 obstacles[i].colision = true;
                 score -= 5;
+                imgMalus=loadImage("ball13.png");
         }
       }
     } else {
@@ -123,8 +131,10 @@ function Balle(genre) {
   this.colision = false;
 
   this.drawAccident = function() {
-    fill(this.couleur);
-   ellipse(this.pX, this.pY, this.size, this.size);
+    //fill(this.couleur);
+   //ellipse(this.pX, this.pY, this.size, this.size);
+   image(imgObs,this.pX, this.pY, this.size, this.size);
+   
     
   }
 }
