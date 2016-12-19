@@ -5,7 +5,7 @@ var pX, pY;
 var aX, aY;
 var f, bounce;
 var R;
-var score;
+var score,timer;
 var colision;
 var typeObstacle;
 var imgBack,imgBall,imgObs;
@@ -17,17 +17,17 @@ function preload(){
 }
 
 function setup() {
-
-  createCanvas(windowWidth, windowHeight);
+  
+   createCanvas(windowWidth, windowHeight);
    ellipseMode(CENTER);
    imgBall=loadImage("ball8.png");
    
   var typeObstacle = 0;
   for (var i = 0; i < 3; i++) {
-    //imgObs=loadImage("ball.png");
-    obstacles[0] = new Balle("bonus");
-    obstacles[1] = new Balle("malus");
-    obstacles[2] = new Balle("mur");
+  //imgObs=loadImage("ball.png");
+  obstacles[0] = new Balle("bonus");
+  obstacles[1] = new Balle("malus");
+  obstacles[2] = new Balle("mur");
    
   }
 
@@ -37,6 +37,7 @@ function setup() {
   bounce = 0.5;
   R = ballSize / 2;
   score = 0;
+  timer = 1800;
   ballSize = 50;
   bSize = 30;
   pX = windowWidth / 2;
@@ -47,12 +48,19 @@ function draw() {
 
   background(imgBack,100);
   drawBall();
-  textSize(30);
-  fill(255);
-  for (i = 0; i < 3; i++) {
-  obstacles[i].drawAccident();
-  }
+  displayTimer();
+  displayScore();
+  colision();
+  
+  
+  
+  
 
+  
+}
+/*********************************************************=============*******************************************************/
+function drawBall() {
+  
   aX = rotationY * f;
   vX += aX;
   pX += vX;
@@ -60,7 +68,7 @@ function draw() {
   vY += aY;
   pY += vY;
   
-  text("score:" + score, windowWidth/2, 50);
+  
   
 if ((pX + ballSize / 2) >= windowWidth) {
     vX = -vX * bounce;
@@ -81,8 +89,16 @@ if ((pX + ballSize / 2) >= windowWidth) {
     vY = -vY * bounce;
     pY = ballSize / 2;
   }
-
-
+  image(imgBall,pX, pY, ballSize, ballSize);
+}
+/*********************************************************=============*******************************************************/
+function displayScore(){
+  textSize(30);
+  fill(255);
+  text("score:" + score, windowWidth/2, 50);
+  
+}
+function colision(){
   for (i = 0; i < 3; i++) {
     if (dist(pX, pY, obstacles[i].pX, obstacles[i].pY) <= ballSize / 2 + obstacles[i].size / 2) {
 
@@ -108,14 +124,26 @@ if ((pX + ballSize / 2) >= windowWidth) {
     } else {
       obstacles[i].colision = false;
     }
+     
+  obstacles[i].drawAccident();
+  
   }
 }
 /*********************************************************=============*******************************************************/
-function drawBall() {
+function displayTimer() {
+  fill(255);
+  rect(windowWidth / 2 + 110, 22, 30, 30);
+  noStroke();
+  textSize(20);
+  fill(0);
+  text(int(timer / 60), width / 2 + 115, 45);
 
-  //fill(0);
-  //ellipse(pX, pY, ballSize, ballSize);
-  image(imgBall,pX, pY, ballSize, ballSize);
+
+  if (timer <= 0) {
+    obstacles[i] = false;
+
+  }
+  timer--;
 }
 /*********************************************************=============*******************************************************/
 function Balle(genre) {
@@ -131,10 +159,9 @@ function Balle(genre) {
   this.colision = false;
 
   this.drawAccident = function() {
-    //fill(this.couleur);
-   //ellipse(this.pX, this.pY, this.size, this.size);
    image(imgObs,this.pX, this.pY, this.size, this.size);
    
     
   }
+  
 }
