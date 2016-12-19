@@ -48,7 +48,7 @@ function draw() {
   background(imgBack,100);
   drawBall();
   textSize(30);
-  fill(0, 0, 255);
+  fill(255);
   for (i = 0; i < 3; i++) {
   obstacles[i].drawAccident();
   }
