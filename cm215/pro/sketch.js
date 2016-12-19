@@ -8,7 +8,7 @@ var f;
 var R;
 var bounce;
 var score,timer;
-var imag,imagBall,imagObst,imagMalus;
+var imag,imagBall,imagObst,imagMalus,imagGa;
 var level;
 var scoreLevel =[0,30,60];
 /* *********************** ----- *********************** */
@@ -19,6 +19,7 @@ function preload() {
   imagObst = loadImage("ball10.png");
   imagMalus = loadImage("ball13.png");
   imagBonus = loadImage("ball.png");
+  imagGa = loadImage("over.png");
 }
 /* *********************** ----- *********************** */
 
@@ -29,7 +30,8 @@ function setup() {
   imgaObst = loadImage("ball10.png");
   imagMalus = loadImage("ball13.png");
   imagBonus = loadImage("ball.png");
-  ballSize = 80;
+  imagGa = loadImage("over.png");
+  ballSize = 50;
   pX = windowWidth / 2;
   pY = windowHeight / 2;
   vX = 0;
@@ -137,10 +139,27 @@ function displayTimer() {
   textSize(20);
   fill(0);
   text(int(timer / 60), width / 2 + 40, 60);
-  if (timer <= 0) {
-    obstacles[i] = false;
+  
+ if (timer <= 0) {
+    if(score >= scoreLevel[level]){
+    level++;
+    score=0;
+    newObstacles(level);
+    timer=timer + 1800;
+    obstacles[i] = true;
+    }else{
+    gameOver();
+    }
+  
+  }else{
+    timer--;
   }
-  timer--;
+}
+/* *********************** ----- *********************** */
+function gameOver(){
+  //fill(255);
+  //textSize(20);
+ image(imagGa, windowWidth / 2-120, windowHeight/2, 240,120);
 }
 
 /* *********************** ----- *********************** */
@@ -149,7 +168,7 @@ function Obstacle(genre) {
   this.type = genre;
   this.xPos = random(0, windowWidth);
   this.yPos = random(0, windowHeight);
-  this.size = (50);
+  this.size = (30);
   this.color = color(0,255);
   this.radius = this.size / 2;
   this.colision = false;
