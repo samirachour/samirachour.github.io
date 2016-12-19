@@ -70,13 +70,13 @@ function newObstacles(newLevel) {
   var toto = 0;
   for (var i = 0; i < (3*newLevel); i++) {
   if (toto === 0) {
-      obstacles[i] = new Obstacle("bonus");
+      obstacles[i] = new Balle("bonus");
       toto++;
     } else if (toto == 1) {
-      obstacles[i] = new Obstacle("malus");
+      obstacles[i] = new Balle("malus");
       toto++;
     } else if (toto == 2) {
-      obstacles[i] = new Obstacle("neutre");
+      obstacles[i] = new Balle("neutre");
       toto = 0;
     }
   }
@@ -108,7 +108,7 @@ function drawBall() {
     vY += aY;
     pY += vY;
   if (pX + R > windowWidth) {
-    vX = -vX * bN;
+    vX = -vX * bounce;
     pX = windowWidth - R;
   } else if (pX - R <= 0) {
     vX = -vX * bounce;
@@ -157,19 +157,17 @@ function displayTimer() {
 }
 /* *********************** ----- *********************** */
 function gameOver(){
-  //fill(255);
-  //textSize(20);
  image(imagGa, windowWidth / 2-120, windowHeight/2, 240,120);
 }
 
 /* *********************** ----- *********************** */
 
-function Obstacle(genre) {
+function Balle(genre) {
   this.type = genre;
   this.xPos = random(0, windowWidth);
   this.yPos = random(0, windowHeight);
   this.size = (30);
-  this.color = color(0,255);
+  this.couleur = color(0,255,255);
   this.radius = this.size / 2;
   this.colision = false;
   this.phot;
@@ -190,7 +188,7 @@ function Obstacle(genre) {
   }
   
   this.display = function() {
-  fill(this.color);
+  fill(this.couleur);
   image(this.phot, this.xPos, this.yPos, this.size, this.size);
 }
 }
