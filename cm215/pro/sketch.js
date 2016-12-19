@@ -94,7 +94,7 @@ function colision() {
   } else {
       obstacles[i].colision = false;
 }
-    obstacles[i].display();
+    obstacles[i].drawAccident();
   }
 }
 /* *********************** ----- *********************** */
@@ -187,7 +187,7 @@ function Balle(genre) {
     this.phot = imagObst;
   }
   
-  this.display = function() {
+  this.drawAccident = function() {
   fill(this.couleur);
   image(this.phot, this.xPos, this.yPos, this.size, this.size);
 }
