@@ -124,7 +124,7 @@ function drawBall() {
 /* *********************** ----- *********************** */
 
 function displayScore() {
-  textSize(20);
+  textSize(30);
   fill(255);
   text("SCORE:" + level + "/" + score, windowWidth / 2, 30);
 }
