@@ -146,7 +146,7 @@ function displayTimer() {
     score=0;
     newObstacles(level);
     timer=timer + 1800;
-    obstacles[i] = true;
+    obstacles[i] = false;
     }else{
     gameOver();
     }
